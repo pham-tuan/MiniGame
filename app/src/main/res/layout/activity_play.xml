@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayActivity">
+
+    <TextView
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#384b75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/count_number"
+        android:gravity="center_horizontal"
+        android:text="0"
+        android:textColor="#ffffff"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progessbar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/bg_progressbar"
+        app:layout_constraintBottom_toBottomOf="@+id/top"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:elevation="1dp"
+        android:src="@drawable/lock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/top" />
+
+    <LinearLayout
+        android:id="@+id/bgplay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottom"
+        app:layout_constraintTop_toBottomOf="@+id/top"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageView
+            android:id="@+id/ivRight"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:elevation="1dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/right"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivWrong"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:elevation="1dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/wrong"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="590dp"
+        android:background="@drawable/gamebgplay"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/top"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:id="@+id/operator"
+            android:layout_width="370dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/backgroundoperator"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvnumberA"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="30dp"
+                android:gravity="center"
+                android:maxLength="2"
+                android:text='❓'
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numberOperator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="35dp"
+                android:text='+'
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvnumberB"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="35dp"
+                android:gravity="center"
+                android:text='❓'
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="35dp"
+                android:text='='
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvnumberResult"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="25dp"
+                android:gravity="center"
+                android:text='❓'
+                android:textSize="30dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/llNumber">
+
+            <LinearLayout
+                android:id="@+id/rowOne"
+                android:layout_width="326dp"
+                android:layout_height="86dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tvOne"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/bgnumber"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:text="1"
+                    android:textColor="@color/white"
+                    android:textSize="60dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tvTwo"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/bgnumber"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/white"
+                    android:textSize="60dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tvThree"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/bgnumber"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/white"
+                    android:textSize="60dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowTwo"
+                android:layout_width="326dp"
+                android:layout_height="86dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tvFour"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/bgnumber"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:text="4"
+                    android:textColor="@color/white"
+                    android:textSize="60dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tvFive"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/bgnumber"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="@color/white"
+                    android:textSize="60dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tvSix"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/bgnumber"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textColor="@color/white"
+                    android:textSize="60dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowThree"
+                android:layout_width="326dp"
+                android:layout_height="86dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tvSeven"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/bgnumber"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:text="7"
+                    android:textColor="@color/white"
+                    android:textSize="60dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tvEight"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/bgnumber"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textColor="@color/white"
+                    android:textSize="60dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tvNine"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/bgnumber"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textColor="@color/white"
+                    android:textSize="60dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/tvZero"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:background="@drawable/bgnumber"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="60dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAgain"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/numbercancle"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/btnPause"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_pause"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#384b75"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/viewCountDown"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.6"
+        android:visibility="visible"
+        android:background="#B5A3A395" />
+
+    <ImageView
+        android:id="@+id/ivTimeUp"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/img_time_up"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go!"
+        android:textColor="#FF9800"
+        android:textSize="64dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.tuan.gamezone.customView.PulseCountDown
+        android:id="@+id/tvCountDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textColor="#FF9800"
+        android:textSize="64dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:pc_startValue="3">
+
+    </com.tuan.gamezone.customView.PulseCountDown>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
